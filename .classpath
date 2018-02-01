@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/commons_logging.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/httpclient_4.3.5.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/jcommander-1.30.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/mysql-connector-java-5.1.26.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/testng-6.5.2.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/xmlbeans-2.5.0.jar"/>
+	<classpathentry kind="lib" path="F:/workspace_spring/zf-httptest/lib/zson.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
