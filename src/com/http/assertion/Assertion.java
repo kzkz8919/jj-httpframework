@@ -17,7 +17,7 @@ public class Assertion {
 
 	public static void begin() {
 		flag = true;
-	}//
+	}
 
 	public static void verifyEquals(Object actual, Object expected) {
 		try {
