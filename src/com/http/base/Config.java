@@ -9,11 +9,10 @@ public class Config {
 
 	private static Log log = new Log(Config.class);
 	public static int timeout;
-	static{		
-		 ParseXml parseXml = new ParseXml(System.getProperty("user.dir")+File.separator+"config/config.xml");
-		 timeout = Integer.parseInt(parseXml.getElementText("/config/timeout"))*1000;
-		 log.info("timeout:"+timeout);
-	}
-	
 
+	static {
+		ParseXml parseXml = new ParseXml(System.getProperty("user.dir") + File.separator + "config/config.xml");
+		timeout = Integer.parseInt(parseXml.getElementText("/config/timeout")) * 1000;
+		log.info("timeout:" + timeout);
+	}
 }
