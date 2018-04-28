@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[2018-04-28 08:45:40.620timeout:20000]]>
+      <![CDATA[2018-04-28 08:52:00.084timeout:20000]]>
     </line>
     <line>
-      <![CDATA[2018-04-28 08:45:40.737verify success : 123]]>
+      <![CDATA[2018-04-28 08:52:00.214verify success : 123]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="383" started-at="2018-04-28T20:45:40Z" finished-at="2018-04-28T20:45:40Z">
+  <suite name="Default suite" duration-ms="388" started-at="2018-04-28T20:51:59Z" finished-at="2018-04-28T20:52:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="383" started-at="2018-04-28T20:45:40Z" finished-at="2018-04-28T20:45:40Z">
+    <test name="Default test" duration-ms="388" started-at="2018-04-28T20:51:59Z" finished-at="2018-04-28T20:52:00Z">
       <class name="com.http.testcase.TestIP2">
-        <test-method status="PASS" signature="getTestCase()[pri:0, instance:com.http.testcase.TestIP2@5a97618e]" name="getTestCase" is-config="true" duration-ms="12" started-at="2018-04-28T20:45:40Z" finished-at="2018-04-28T20:45:40Z">
+        <test-method status="PASS" signature="getTestCase()[pri:0, instance:com.http.testcase.TestIP2@885e019]" name="getTestCase" is-config="true" duration-ms="10" started-at="2018-04-28T20:51:59Z" finished-at="2018-04-28T20:51:59Z">
         </test-method> <!-- getTestCase -->
-        <test-method status="PASS" signature="testIP2(java.util.Map)[pri:0, instance:com.http.testcase.TestIP2@5a97618e]" name="testIP2" duration-ms="275" started-at="2018-04-28T20:45:40Z" data-provider="providerMethod" finished-at="2018-04-28T20:45:40Z">
+        <test-method status="PASS" signature="testIP2(java.util.Map)[pri:0, instance:com.http.testcase.TestIP2@885e019]" name="testIP2" duration-ms="292" started-at="2018-04-28T20:51:59Z" data-provider="providerMethod" finished-at="2018-04-28T20:52:00Z">
           <params>
             <param index="0">
               <value>
