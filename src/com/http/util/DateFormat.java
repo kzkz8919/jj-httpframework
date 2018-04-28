@@ -15,10 +15,10 @@ public class DateFormat {
 		return formatter.format(date);
 	}
 
-	public static void main(String[] args) {
-		DateFormat dateFormat = new DateFormat();
-		System.out.println(dateFormat.fomatDate(new Date()));
-		System.out.println(dateFormat.fomatDate(System.currentTimeMillis()));
-	}
+//	public static void main(String[] args) {
+//		DateFormat dateFormat = new DateFormat();
+//		System.out.println(dateFormat.fomatDate(new Date()));
+//		System.out.println(dateFormat.fomatDate(System.currentTimeMillis()));
+//	}
 
 }

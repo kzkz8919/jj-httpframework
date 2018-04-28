@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.http.assertion.TestListener">
+      <class name="com.http.testcase.TestIP2">
         <methods>
-          <include name="test2"/>
+          <include name="testIP2" invocation-numbers="0"/>
+          <include name="getTestCase"/>
         </methods>
-      </class> <!-- com.http.assertion.TestListener -->
+      </class> <!-- com.http.testcase.TestIP2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

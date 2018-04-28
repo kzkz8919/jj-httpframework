@@ -144,15 +144,15 @@ public class HttpClient {
 		return null;
 	}
 	
-	public static void main(String[] args) {
-		HttpClient hc = new HttpClient();
-		Map<String, String> map = new HashMap<String,String>();
-		map.put("format", "json");
-		map.put("ip", "218.4.255.255");
-		System.out.println(hc.get("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=218.4.255.255"));
-		String url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php";
-		System.out.println(map);
-		System.out.println(hc.post(url, map));
-		
-	}
+//	public static void main(String[] args) {
+//		HttpClient hc = new HttpClient();
+//		Map<String, String> map = new HashMap<String,String>();
+//		map.put("format", "json");
+//		map.put("ip", "218.4.255.255");
+//		System.out.println(hc.get("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=218.4.255.255"));
+//		String url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php";
+//		System.out.println(map);
+//		System.out.println(hc.post(url, map));
+//		
+//	}
 }

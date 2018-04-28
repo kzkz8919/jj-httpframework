@@ -1,0 +1,18 @@
+<data>
+	<common>
+		<inputValue>test</inputValue>
+	</common>
+	<testDemo>
+		<username>test1</username>
+		<password>123456</password>
+		<inputValue>test1</inputValue>
+	</testDemo>
+	<testDemo>
+		<username>test2</username>
+		<password>123456</password>
+	</testDemo>
+	<demoTest>
+		<username>test1</username>
+		<password>123456</password>
+	</demoTest>
+</data>
