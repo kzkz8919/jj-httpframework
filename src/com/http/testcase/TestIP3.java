@@ -14,9 +14,9 @@ import com.zf.zson.ZSON;
 import com.zf.zson.result.ZsonResult;
 
 @Listeners(DefinedReport.class)
-public class TestIP3 extends TestBase{
-	@Test(dataProvider="providerMethod",description="测试DEMO")
-	public void testIP3(Map<String, String> param){
+public class TestIP3 extends TestBase {
+	@Test(dataProvider = "providerMethod", description = "测试DEMO")
+	public void testIP3(Map<String, String> param) {
 		Reporter.log("this is demo!");
 		String result = httpClient.get(param.get("url"));
 		ZsonResult re = ZSON.parseJson(result);
@@ -24,6 +24,5 @@ public class TestIP3 extends TestBase{
 		Object userId = list.get(0);
 		Assertion.assertEquals(userId, param.get("userId"));
 	}
-	
 
 }
