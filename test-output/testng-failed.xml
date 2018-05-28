@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.http.testcase.TestIP2">
+      <class name="com.http.testcase.TestIP3">
         <methods>
-          <include name="testIP2" invocation-numbers="0"/>
           <include name="getTestCase"/>
+          <include name="testIP3" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.http.testcase.TestIP2 -->
+      </class> <!-- com.http.testcase.TestIP3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,20 +2,23 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[2018-04-28 08:52:40.429timeout:20000]]>
+      <![CDATA[this is demo!]]>
     </line>
     <line>
-      <![CDATA[2018-04-28 08:52:40.538verify success : 123]]>
+      <![CDATA[2018-05-28 04:41:41.852timeout:20000]]>
+    </line>
+    <line>
+      <![CDATA[2018-05-28 04:41:41.968verify success : 123]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="357" started-at="2018-04-28T20:52:40Z" finished-at="2018-04-28T20:52:40Z">
+  <suite name="Default suite" duration-ms="375" started-at="2018-05-28T16:41:41Z" finished-at="2018-05-28T16:41:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="357" started-at="2018-04-28T20:52:40Z" finished-at="2018-04-28T20:52:40Z">
-      <class name="com.http.testcase.TestIP2">
-        <test-method status="PASS" signature="getTestCase()[pri:0, instance:com.http.testcase.TestIP2@3088a346]" name="getTestCase" is-config="true" duration-ms="10" started-at="2018-04-28T20:52:40Z" finished-at="2018-04-28T20:52:40Z">
+    <test name="Default test" duration-ms="375" started-at="2018-05-28T16:41:41Z" finished-at="2018-05-28T16:41:41Z">
+      <class name="com.http.testcase.TestIP3">
+        <test-method status="PASS" signature="getTestCase()[pri:0, instance:com.http.testcase.TestIP3@f06e01a]" name="getTestCase" is-config="true" duration-ms="11" started-at="2018-05-28T16:41:41Z" finished-at="2018-05-28T16:41:41Z">
         </test-method> <!-- getTestCase -->
-        <test-method status="PASS" signature="testIP2(java.util.Map)[pri:0, instance:com.http.testcase.TestIP2@3088a346]" name="testIP2" duration-ms="266" started-at="2018-04-28T20:52:40Z" data-provider="providerMethod" finished-at="2018-04-28T20:52:40Z">
+        <test-method status="PASS" signature="testIP3(java.util.Map)[pri:0, instance:com.http.testcase.TestIP3@f06e01a]" name="testIP3" duration-ms="277" started-at="2018-05-28T16:41:41Z" description="测试DEMO" data-provider="providerMethod" finished-at="2018-05-28T16:41:41Z">
           <params>
             <param index="0">
               <value>
@@ -23,8 +26,8 @@
               </value>
             </param>
           </params>
-        </test-method> <!-- testIP2 -->
-      </class> <!-- com.http.testcase.TestIP2 -->
+        </test-method> <!-- testIP3 -->
+      </class> <!-- com.http.testcase.TestIP3 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

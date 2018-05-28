@@ -12,26 +12,25 @@ import org.dom4j.io.SAXReader;
 
 public class ParseXml {
 	/**
-	 * ½âÎöxmlÎÄ¼ş£¬ÎÒÃÇĞèÒªÖªµÀxmlÎÄ¼şµÄÂ·¾¶£¬È»ºó¸ù¾İÆäÂ·¾¶¼ÓÔØxmlÎÄ¼şºó£¬Éú³ÉÒ»¸öDocumentµÄ¶ÔÏó£¬
-	 * ÓÚÊÇÎÒÃÇÏÈ¶¨ÒåÁ½¸ö±äÁ¿String filePath,Document document
-	 * È»ºóÔÙ¶¨ÒåÒ»¸öload·½·¨£¬Õâ¸ö·½·¨ÓÃÀ´¼ÓÔØxmlÎÄ¼ş£¬´Ó¶ø²úÉúdocument¶ÔÏó¡£
+	 * è§£æxmlæ–‡ä»¶ï¼Œæˆ‘ä»¬éœ€è¦çŸ¥é“xmlæ–‡ä»¶çš„è·¯å¾„ï¼Œç„¶åæ ¹æ®å…¶è·¯å¾„åŠ è½½xmlæ–‡ä»¶åï¼Œç”Ÿæˆä¸€ä¸ªDocumentçš„å¯¹è±¡ï¼Œ äºæ˜¯æˆ‘ä»¬å…ˆå®šä¹‰ä¸¤ä¸ªå˜é‡String
+	 * filePath,Document document ç„¶åå†å®šä¹‰ä¸€ä¸ªloadæ–¹æ³•ï¼Œè¿™ä¸ªæ–¹æ³•ç”¨æ¥åŠ è½½xmlæ–‡ä»¶ï¼Œä»è€Œäº§ç”Ÿdocumentå¯¹è±¡ã€‚
 	 */
 	private String filePath;
-	
+
 	private Document document;
-	
+
 	/**
-	 * 	¹¹ÔìÆ÷ÓÃÀ´new ParseXml¶ÔÏóÊ±£¬´«Ò»¸öfilePathµÄ²ÎÊı½øÀ´,´Ó¶ø³õÊ¼»¯filePathµÄÖµ
-	 * µ÷ÓÃload·½·¨£¬´Ó¶øÔÚParseXml¶ÔÏó²úÉúÊ±£¬¾Í»á²úÉúÒ»¸ödocumentµÄ¶ÔÏó¡£
+	 * æ„é€ å™¨ç”¨æ¥new ParseXmlå¯¹è±¡æ—¶ï¼Œä¼ ä¸€ä¸ªfilePathçš„å‚æ•°è¿›æ¥,ä»è€Œåˆå§‹åŒ–filePathçš„å€¼
+	 * è°ƒç”¨loadæ–¹æ³•ï¼Œä»è€Œåœ¨ParseXmlå¯¹è±¡äº§ç”Ÿæ—¶ï¼Œå°±ä¼šäº§ç”Ÿä¸€ä¸ªdocumentçš„å¯¹è±¡ã€‚
 	 */
 	public ParseXml(String filePath) {
 		this.filePath = filePath;
 		this.load(this.filePath);
 	}
-	
+
 	/**
-	 * ÓÃÀ´¼ÓÔØxmlÎÄ¼ş£¬²¢ÇÒ²úÉúÒ»¸ödocumentµÄ¶ÔÏó
-	 */	
+	 * ç”¨æ¥åŠ è½½xmlæ–‡ä»¶ï¼Œå¹¶ä¸”äº§ç”Ÿä¸€ä¸ªdocumentçš„å¯¹è±¡
+	 */
 	private void load(String filePath) {
 		File file = new File(filePath);
 		if (file.exists()) {
@@ -39,17 +38,19 @@ public class ParseXml {
 			try {
 				document = saxReader.read(filePath);
 			} catch (DocumentException e) {
-				throw new RuntimeException("ÎÄ¼ş¼ÓÔØÒì³£");
+				throw new RuntimeException("æ–‡ä»¶åŠ è½½å¼‚å¸¸ï¼š" + filePath);
 			}
 		} else {
-			throw new RuntimeException("ÎÄ¼ş²»´æÔÚ");
+			throw new RuntimeException("æ–‡ä»¶ä¸å­˜åœ¨ï¼š" + filePath);
 		}
 	}
 
 	/**
-	 * ÓÃxpathÀ´µÃµ½Ò»¸öÔªËØ½Úµã¶ÔÏó
-	 * @param elementPath elementPathÊÇÒ»¸öxpathÂ·¾¶,±ÈÈç"/config/driver"
-	 * @return ·µ»ØµÄÊÇÒ»¸ö½ÚµãElement¶ÔÏó
+	 * ç”¨xpathæ¥å¾—åˆ°ä¸€ä¸ªå…ƒç´ èŠ‚ç‚¹å¯¹è±¡
+	 * 
+	 * @param elementPath
+	 *            elementPathæ˜¯ä¸€ä¸ªxpathè·¯å¾„,æ¯”å¦‚"/config/driver"
+	 * @return è¿”å›çš„æ˜¯ä¸€ä¸ªèŠ‚ç‚¹Elementå¯¹è±¡
 	 */
 	public Element getElementObjectByXpath(String elementPath) {
 		return (Element) document.selectSingleNode(elementPath);
@@ -59,7 +60,7 @@ public class ParseXml {
 	public List<Element> getElementObjectsByXpath(String elementPath) {
 		return document.selectNodes(elementPath);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public Map<String, String> getChildrenInfoByXpath(String elementPath) {
 		Element element = this.getElementObjectByXpath(elementPath);
@@ -73,7 +74,7 @@ public class ParseXml {
 
 	@SuppressWarnings("unchecked")
 	public Map<String, String> getChildrenInfoByElement(Element element) {
-		Map<String, String> map = new HashMap<String , String>();
+		Map<String, String> map = new HashMap<String, String>();
 		List<Element> children = element.elements();
 		for (Element e : children) {
 			map.put(e.getName(), e.getText());
@@ -82,34 +83,34 @@ public class ParseXml {
 	}
 
 	/**
-	 * ÓÃxpathÀ´È¡µÃÒ»¸ö½áµã¶ÔÏóµÄÖµ
+	 * ç”¨xpathæ¥å–å¾—ä¸€ä¸ªç»“ç‚¹å¯¹è±¡çš„å€¼Öµ
 	 */
 	public String getElementText(String xPath) {
 		Element element = this.getElementObjectByXpath(xPath);
 		return element.getText().trim();
 	}
-	
+
 	/**
-	 * ÓÃxpathÀ´È¡µÃÒ»¸ö½áµã¶ÔÏóµÄÃû×Ö
+	 * ç”¨xpathæ¥å–å¾—ä¸€ä¸ªç»“ç‚¹å¯¹è±¡çš„åå­—
 	 */
 	public String getElementName(String xPath) {
 		Element element = this.getElementObjectByXpath(xPath);
 		return element.getName().trim();
 	}
 
-//	public static void main(String[] args) {
-//		ParseXml parseXml = new ParseXml("config/config.xml");
-//		// List<Map<String, String>> list = new ArrayList<Map<String,
-//		// String>>();
-//		Map<String, String> map = new HashMap<String, String>();
-//		map = parseXml.getChildrenInfoByXpath("/config/db/test");
-//		System.out.println(map);
-//		System.out.println(parseXml.getElementText("/config/timeout"));
-//		// Element element =
-//		// parseXml.getChildren("/config/db/test/host");
-//		// System.out.println(element.getText());
-//		// System.out.println(element.getName());
-//
-//	}
+	// public static void main(String[] args) {
+	// ParseXml parseXml = new ParseXml("config/config.xml");
+	// // List<Map<String, String>> list = new ArrayList<Map<String,
+	// // String>>();
+	// Map<String, String> map = new HashMap<String, String>();
+	// map = parseXml.getChildrenInfoByXpath("/config/db/test");
+	// System.out.println(map);
+	// System.out.println(parseXml.getElementText("/config/timeout"));
+	// // Element element =
+	// // parseXml.getChildren("/config/db/test/host");
+	// // System.out.println(element.getText());
+	// // System.out.println(element.getName());
+	//
+	// }
 
 }

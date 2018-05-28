@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<common>
+		<url><![CDATA[http://www.sosoapi.com/demo/swagger/user/simple/add.htm]]></url>
+	</common>
+	<testIP3>
+		<userId>123</userId>
+	</testIP3>
+</data>

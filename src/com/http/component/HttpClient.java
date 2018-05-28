@@ -29,14 +29,14 @@ public class HttpClient {
 		CloseableHttpClient httpClient = null;
 		HttpGet httpGet = null;
 		try {
-			httpClient = HttpClients.createDefault();//ÊµÀı»¯HttpClient¶ÔÏó
+			httpClient = HttpClients.createDefault();//å®ä¾‹åŒ–HttpClientå¯¹è±¡
 			RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(Config.timeout).setConnectTimeout(Config.timeout)
-					.build();//¹¹½¨RequestConfig¶ÔÏó
-			httpGet = new HttpGet(url);//¹¹½¨HttpGet¶ÔÏó
-			httpGet.setConfig(requestConfig);//ÉèÖÃRequestConfig
-			CloseableHttpResponse response = httpClient.execute(httpGet);//Ö´ĞĞÇëÇó²¢»ñÈ¡response¶ÔÏó
-			HttpEntity entity = response.getEntity();//»ñÈ¡ÏìÓ¦ÕıÎÄ¶ÔÏó
-			return EntityUtils.toString(entity, "utf-8");//°´±àÂëÊä³öÏìÓ¦ÕıÎÄ
+					.build();//æ„å»ºRequestConfigå¯¹è±¡
+			httpGet = new HttpGet(url);//æ„å»ºHttpGetå¯¹è±¡
+			httpGet.setConfig(requestConfig);//è®¾ç½®RequestConfig
+			CloseableHttpResponse response = httpClient.execute(httpGet);//Ö´æ‰§è¡Œè¯·æ±‚å¹¶è·å–responseå¯¹è±¡
+			HttpEntity entity = response.getEntity();//è·å–å“åº”æ­£æ–‡å¯¹è±¡
+			return EntityUtils.toString(entity, "utf-8");//æŒ‰ç¼–ç è¾“å‡ºå“åº”æ­£æ–‡
 		} catch (Exception e) {
 		} finally {
 			try {
@@ -59,30 +59,30 @@ public class HttpClient {
 		CloseableHttpClient httpClient = null;
 		HttpPost httpPost = null;
 		try {
-			httpClient = HttpClients.createDefault();//ÊµÀı»¯HttpClient¶ÔÏó
+			httpClient = HttpClients.createDefault();//å®ä¾‹åŒ–HttpClientå¯¹è±¡
 			RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(20000).setConnectTimeout(20000)
-					.build();//¹¹½¨RequestConfig¶ÔÏó  
-			httpPost = new HttpPost(url);//¹¹½¨HttpPost¶ÔÏó
-			httpPost.setConfig(requestConfig);//ÉèÖÃRequestConfig
-			 /**
-	         * ¿ªÊ¼¹¹½¨±íµ¥²ÎÊı£¬±íµ¥²ÎÊıµÄÊı¾İ¸ñÊ½ÊÇ£ºname=zhangsan&age=18,
-	         * ÆäÖĞ£¬nameÓëageÎªkey,·Ö±ğ¶ÔÓ¦µÄvalueÎªzhangsanÓë18
-	         * ÕıÒòÎª±íµ¥²ÎÊıµÄÊı¾İ¸ñÊ½Îªkey-valueµÄ¼üÖµ¶ÔĞÎÊ½£¬ËùÒÔÈë²ÎÎªÒ»¸öMap<String, String> params
-	         */
+					.build();//æ„å»ºRequestConfigå¯¹è±¡ 
+			httpPost = new HttpPost(url);//æ„å»ºHttpPostå¯¹è±¡
+			httpPost.setConfig(requestConfig);//è®¾ç½®RequestConfig
+			/**
+			* å¼€å§‹æ„å»ºè¡¨å•å‚æ•°ï¼Œè¡¨å•å‚æ•°çš„æ•°æ®æ ¼å¼æ˜¯ï¼šname=zhangsan&age=18,
+			* å…¶ä¸­ï¼Œnameä¸ageä¸ºkey,åˆ†åˆ«å¯¹åº”çš„valueä¸ºzhangsanä¸18
+			* æ­£å› ä¸ºè¡¨å•å‚æ•°çš„æ•°æ®æ ¼å¼ä¸ºkey-valueçš„é”®å€¼å¯¹å½¢å¼ï¼Œæ‰€ä»¥å…¥å‚ä¸ºä¸€ä¸ªMap<String, String> params
+			*/
 			List<NameValuePair> pl = new ArrayList<NameValuePair>();
 			for (String key : map.keySet()) {
 				pl.add(new BasicNameValuePair(key, map.get(key)));
 			}
-			//¹¹½¨±íµ¥²ÎÊıÍê±Ï£¬²úÉúÒ»¸öList<NameValuePair>µÄ¶ÔÏó,ÆäÖĞBasicNameValuePairÊÇ²úÉúÒ»¸ökey-valueµÄ¼üÖµ¶Ô¶ÔÏó
-	        /**
-	         * new UrlEncodedFormEntity(ps)ÖĞµÄUrlEncodedFormEntity¶ÔÏóÊÇ½«List<NameValuePair>×ª»»Îª±íµ¥²ÎÊıµÄÊı¾İ¸ñÊ½£¬
-	         * ²¢½«Content-TypeÉèÖÃÎªapplication/x-www-form-urlencoded
-	         * ËùÒÔ²»ĞèÒªÎÒÃÇ×ÔÒÑÉèÖÃContent-TypeÁË
-	         */
-			httpPost.setEntity(new UrlEncodedFormEntity(pl, "UTF-8"));//ÉèÖÃÇëÇóÕıÎÄ£¬Ò²¾ÍÊÇÉèÖÃ±íµ¥²ÎÊı
-			CloseableHttpResponse response = httpClient.execute(httpPost);//Ö´ĞĞÇëÇó²¢»ñÈ¡response¶ÔÏó
-			HttpEntity httpEntity = response.getEntity();//»ñÈ¡ÏìÓ¦ÕıÎÄ¶ÔÏó
-			return EntityUtils.toString(httpEntity, "utf-8");//°´±àÂëÊä³öÏìÓ¦ÕıÎÄ
+			//æ„å»ºè¡¨å•å‚æ•°å®Œæ¯•ï¼Œäº§ç”Ÿä¸€ä¸ªList<NameValuePair>çš„å¯¹è±¡,å…¶ä¸­BasicNameValuePairæ˜¯äº§ç”Ÿä¸€ä¸ªkey-valueçš„é”®å€¼å¯¹å¯¹è±¡
+			/**
+			* new UrlEncodedFormEntity(ps)ä¸­çš„UrlEncodedFormEntityå¯¹è±¡æ˜¯å°†List<NameValuePair>è½¬æ¢ä¸ºè¡¨å•å‚æ•°çš„æ•°æ®æ ¼å¼ï¼Œ
+			* å¹¶å°†Content-Typeè®¾ç½®ä¸ºapplication/x-www-form-urlencoded
+			* æ‰€ä»¥ä¸éœ€è¦æˆ‘ä»¬è‡ªå·²è®¾ç½®Content-Typeäº†
+			*/
+			httpPost.setEntity(new UrlEncodedFormEntity(pl, "UTF-8"));//è®¾ç½®è¯·æ±‚æ­£æ–‡ï¼Œä¹Ÿå°±æ˜¯è®¾ç½®è¡¨å•å‚æ•°
+			CloseableHttpResponse response = httpClient.execute(httpPost);//æ‰§è¡Œè¯·æ±‚å¹¶è·å–responseå¯¹è±¡
+			HttpEntity httpEntity = response.getEntity();//è·å–å“åº”æ­£æ–‡å¯¹è±¡
+			return EntityUtils.toString(httpEntity, "utf-8");//æŒ‰ç¼–ç è¾“å‡ºå“åº”æ­£æ–‡
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (ClientProtocolException e) {
@@ -110,21 +110,21 @@ public class HttpClient {
 		CloseableHttpClient httpClient = null;
 		HttpPost httpPost = null;
 		try {
-			httpClient = HttpClients.createDefault();//ÊµÀı»¯HttpClient¶ÔÏó
+			httpClient = HttpClients.createDefault();//å®ä¾‹åŒ–HttpClientå¯¹è±¡
 			RequestConfig requestConfig = RequestConfig.custom().
-			setSocketTimeout(2000).setConnectTimeout(2000).build();//¹¹½¨RequestConfig¶ÔÏó
-			httpPost = new HttpPost(url);//¹¹½¨HttpPost¶ÔÏó
-			httpPost.setConfig(requestConfig);//ÉèÖÃRequestConfig
-	        /**
-	         * ÔÚÇëÇóÕıÎÄÖĞ£¬¿ÉÒÔËæÒâµÄÌá½»Ò»¶Î×Ö·û´®¸ø·şÎñÆ÷£¬ÏÖÔÚÎªÁËÊı¾İ½»»»µÄÍ³Ò»ĞÔ£¬ËùÒÔ´ó¼Ò¶¼ÊÇÌá½»µÄÒ»¶Îjson´®£¬
-	         * ËùÒÔbodyµÄÊı¾İ¸ñÊ½{"name":"zhangsan","age":18}£¬Èç¹ûbodyÊÇ¸ÃÊı¾İ¸ñÊ½£¬ÔòContent-TypeÒªÉèÖÃÎªapplication/json
-	         * new StringEntity(body)ÊÇÖ¸ÀûÓÃbody¹¹½¨Ò»¸öÇëÇóÕıÎÄ¶ÔÏó£¬ÇÒStringEntityÊÇÖ§³ÖContent-TypeÎªapplication/jsonµÄ£¬
-	         * ËùÒÔ£¬Èç¹ûÓÃÁËStringEntity¶ÔÏóÇÒbodyµÄÊı¾İ¸ñÊ½Îªjson´®£¬ÔòÎŞĞèÎÒÃÇÔÙÉèÖÃContent-Type
-	         */		
-			httpPost.setEntity(new StringEntity(body));//ÉèÖÃÇëÇóÕıÎÄ£¬Ò²¾ÍÊÇÉèÖÃjson´®
+			setSocketTimeout(2000).setConnectTimeout(2000).build();//æ„å»ºRequestConfigå¯¹è±¡
+			httpPost = new HttpPost(url);///æ„å»ºHttpPostå¯¹è±¡
+			httpPost.setConfig(requestConfig);//è®¾ç½®RequestConfig
+			/**
+			* åœ¨è¯·æ±‚æ­£æ–‡ä¸­ï¼Œå¯ä»¥éšæ„çš„æäº¤ä¸€æ®µå­—ç¬¦ä¸²ç»™æœåŠ¡å™¨ï¼Œç°åœ¨ä¸ºäº†æ•°æ®äº¤æ¢çš„ç»Ÿä¸€æ€§ï¼Œæ‰€ä»¥å¤§å®¶éƒ½æ˜¯æäº¤çš„ä¸€æ®µjsonä¸²ï¼Œ
+			* æ‰€ä»¥bodyçš„æ•°æ®æ ¼å¼{"name":"zhangsan","age":18}ï¼Œå¦‚æœbodyæ˜¯è¯¥æ•°æ®æ ¼å¼ï¼Œåˆ™Content-Typeè¦è®¾ç½®ä¸ºapplication/json
+			* new StringEntity(body)æ˜¯æŒ‡åˆ©ç”¨bodyæ„å»ºä¸€ä¸ªè¯·æ±‚æ­£æ–‡å¯¹è±¡ï¼Œä¸”StringEntityæ˜¯æ”¯æŒContent-Typeä¸ºapplication/jsonçš„ï¼Œ
+			* æ‰€ä»¥ï¼Œå¦‚æœç”¨äº†StringEntityå¯¹è±¡ä¸”bodyçš„æ•°æ®æ ¼å¼ä¸ºjsonä¸²ï¼Œåˆ™æ— éœ€æˆ‘ä»¬å†è®¾ç½®Content-Type
+			*/	
+			httpPost.setEntity(new StringEntity(body));//è®¾ç½®è¯·æ±‚æ­£æ–‡ï¼Œä¹Ÿå°±æ˜¯è®¾ç½®jsonä¸²
 			CloseableHttpResponse response = httpClient.execute(httpPost);
-			HttpEntity httpEntity= response.getEntity();
-			return EntityUtils.toString(httpEntity,"utf-8");	
+			HttpEntity httpEntity= response.getEntity();//è·å–å“åº”æ­£æ–‡å¯¹è±¡
+			return EntityUtils.toString(httpEntity,"utf-8");//æŒ‰ç¼–ç è¾“å‡ºå“åº”æ­£æ–‡
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
 		}catch (IOException e) {
